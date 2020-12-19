@@ -1,0 +1,22 @@
+
+{% extends 'blog/base2.html' %}
+{% block content %}
+ {% if user.is_authenticated %}
+<body>
+<h1>
+    {{ post.title }}</br>
+    {{ post.author }}</br>
+    {{ post.category }}</br>
+    {{ post.content }}</br>
+    {{ post.date_posted }}</br>
+
+
+</h1>
+<a href="{% url 'home' %}" > Back </a>
+</body>
+{% else %}
+
+You must be logged in
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'blog/base2.html' %}
+{% block content %}
+
+ {% if user.is_authenticated %}
+<body>
+  <div class="form-group">
+<form method="POST"> {% csrf_token %}
+
+
+        {{ form.as_p }}
+       <button class="btn btn-secondary">Post </button>
+
+</form>
+       </div>
+  <small>
+
+<a href="{% url 'home' %}" > Back </a>
+  </small>
+</body>
+
+{% else %}
+
+You must be logged in
+{% endif %}
+
+
+{% endblock %}

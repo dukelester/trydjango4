@@ -1,0 +1,23 @@
+{% extends 'blog/base2.html' %}
+{% block content %}
+ {% if user.is_authenticated %}
+<body>
+<h1>Delete Post</h1>
+<div class="form-group">
+    <form method="POST"> {% csrf_token %}
+
+
+
+           <button class="btn btn-secondary">Delete </button>
+
+    </form>
+      <a href="{% url 'delete-post' post.pk %}" >Delete</a>
+            </small>
+               </div>
+<a href="{% url 'home' %}" > Back </a>
+</body>
+{% else %}
+
+You must be logged in
+{% endif %}
+{% endblock %}

@@ -1,6 +1,7 @@
 
 {% extends 'blog/base.html' %}
 {% block content %}
+ {% if user.is_authenticated %}
 <head>
     <meta charset="UTF-8">
     <title>About</title>
@@ -8,5 +9,9 @@
 <body>
 A blog is an awesome way to express ones self feelings and emotions to others.
 </body>
+{% else %}
+
+You must be logged in
+{% endif %}
 
 {% endblock %}

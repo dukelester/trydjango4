@@ -1,0 +1,27 @@
+{% extends 'blog/base2.html' %}
+{% block content %}
+ {% if user.is_authenticated %}
+<body>
+
+<ul>
+    {% for data in object_list %}
+<a href="{% url 'mydata' data.pk %} " >
+    <li> {{ data.First_name }}</li>
+    <li> {{ data.Middle_name }}</li>
+    <li> {{ data.Last_name }}</li>
+    <li> {{ data.age }}</li>
+
+    <li> {{ data.photo }}</li>
+
+    <li> {{ data.phone_number }}</li>
+    <li> {{ data.location }}</li>
+</a>
+
+</ul>
+{% endfor %}
+</body>
+{% else %}
+
+You must be logged in
+{% endif %}
+{% endblock %}

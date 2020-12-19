@@ -1,0 +1,17 @@
+{% extends 'blog/base2.html' %}
+{% block content %}
+
+<body>
+{{ data.First_name }}
+    <li> {{ data.Middle_name }}</li>
+    <li> {{ data.Last_name }}</li>
+    <li> {{ data.age }}</li>
+
+    <li> {{ data.photo }}</li>
+
+    <li> {{ data.phone_number }}</li>
+    <li> {{ data.location }}</li>\
+
+<a href="{% url 'home' %}" > Back </a>
+</body>
+{% endblock %}
